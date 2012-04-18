@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.edu.whs.dvi.aufgabe1.entities;
+package se.edu.dvi.aufgabe1.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -29,17 +29,26 @@ public class Kategorie implements edu.whs.dvi.aufgabe1.entities.Kategorie, Seria
     
     @Id
     String name;
-    @OneToMany(mappedBy="kategorie")
-    Collection<Artikel> artikel;
+    @OneToMany(targetEntity=Artikel.class,mappedBy="kategorie")
+    Collection<edu.whs.dvi.aufgabe1.entities.Artikel> artikel;
     @ManyToOne
     Kategorie oberkategorie;
 
-    @Override
-    public Collection<edu.whs.dvi.aufgabe1.entities.Artikel> getArtikel() {
-        return null;
+    public Kategorie(String name, Collection<edu.whs.dvi.aufgabe1.entities.Artikel> artikel, Kategorie oberkategorie) {
+        this.name = name;
+        this.artikel = artikel;
+        this.oberkategorie = oberkategorie;
     }
 
-    public void setArtikel(Collection<Artikel> artikel) {
+    public Kategorie() {
+    }
+
+    @Override
+    public Collection<edu.whs.dvi.aufgabe1.entities.Artikel> getArtikel() {
+        return artikel;
+    }
+
+    public void setArtikel(Collection<edu.whs.dvi.aufgabe1.entities.Artikel> artikel) {
         this.artikel = artikel;
     }
 
@@ -87,5 +96,5 @@ public class Kategorie implements edu.whs.dvi.aufgabe1.entities.Kategorie, Seria
     public void setOberkategorie(Kategorie oberkategorie) {
         this.oberkategorie = oberkategorie;
     }
-    
+
 }

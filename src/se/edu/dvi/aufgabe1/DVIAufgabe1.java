@@ -2,11 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.edu.whs.dvi.aufgabe1;
+package se.edu.dvi.aufgabe1;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import se.edu.whs.dvi.aufgabe1.dataaccess.DataAccessObject;
+import se.edu.dvi.aufgabe1.dataaccess.DataAccessObject;
 
 
 /**
@@ -21,7 +21,7 @@ public class DVIAufgabe1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //DVIAufgabe1.LOGGER.setLevel(Level.OFF);
+        DVIAufgabe1.LOGGER.setLevel(Level.ALL);
         
         DVIAufgabe1.LOGGER.log(Level.INFO, "smf ...");
         new edu.whs.dvi.ui.ShopMainFrame(new DataAccessObject()).setVisible(true);

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.edu.whs.dvi.aufgabe1.entities;
+package se.edu.dvi.aufgabe1.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 /**
  *
@@ -32,8 +31,7 @@ public class Artikel implements edu.whs.dvi.aufgabe1.entities.Artikel, Serializa
     public Artikel() {
     }
 
-    public Artikel(long artikelNr, String name, String beschreibung, long Preis, long lagerbestand, Kategorie kategorie) {
-        this.artikelNr = artikelNr;
+    public Artikel(String name, String beschreibung, long Preis, long lagerbestand, Kategorie kategorie) {
         this.name = name;
         this.beschreibung = beschreibung;
         this.Preis = Preis;
@@ -94,7 +92,10 @@ public class Artikel implements edu.whs.dvi.aufgabe1.entities.Artikel, Serializa
     public String getName() {
         return name;
     }
-    
 
+    @Override
+    public String toString() {
+        return name;
+    }
     
 }
