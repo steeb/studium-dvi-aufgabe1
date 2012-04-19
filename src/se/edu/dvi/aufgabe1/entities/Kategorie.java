@@ -6,6 +6,7 @@ package se.edu.dvi.aufgabe1.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -29,7 +30,7 @@ public class Kategorie implements edu.whs.dvi.aufgabe1.entities.Kategorie, Seria
     
     @Id
     String name;
-    @OneToMany(targetEntity=Artikel.class,mappedBy="kategorie")
+    @OneToMany(targetEntity=Artikel.class,mappedBy="kategorie",cascade= CascadeType.ALL)
     Collection<edu.whs.dvi.aufgabe1.entities.Artikel> artikel;
     @ManyToOne
     Kategorie oberkategorie;

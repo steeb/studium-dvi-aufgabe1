@@ -132,8 +132,6 @@ public class DataAccessObject implements edu.whs.dvi.aufgabe1.dataaccess.DataAcc
         em.getTransaction().begin();
         se.edu.dvi.aufgabe1.entities.Kunde kunde = em.find(se.edu.dvi.aufgabe1.entities.Kunde.class, kundennummer);
         if (kunde == null) throw new ApplicationException("Kunde nicht vorhanden", "Ein Kunde mit der Kundennr.: " + kundennummer + " ist nicht vorhanden.");
-
-        DVIAufgabe1.LOGGER.log(Level.INFO, "Kunde aus DB vor Änderung {0}", kunde);
         
         kunde.setName(name);
         kunde.setVorname(vorname);
@@ -141,12 +139,8 @@ public class DataAccessObject implements edu.whs.dvi.aufgabe1.dataaccess.DataAcc
         kunde.setPLZ(plz);
         kunde.setWohnort(wohnort);
         
-        DVIAufgabe1.LOGGER.log(Level.INFO, "Kunde nach Änderung {0}", kunde);
-        
         em.merge(kunde);
         em.getTransaction().commit();
-        
-        DVIAufgabe1.LOGGER.log(Level.INFO, "Kunde nach refresh {0}", kunde);
         
         DVIAufgabe1.LOGGER.log(Level.INFO, "... updateKunde");
     }
