@@ -14,17 +14,15 @@ import se.edu.dvi.aufgabe1.dataaccess.DataAccessObject;
  * @author steeb
  */
 public class DVIAufgabe1 {
-
-    public final static Logger LOGGER = Logger.getLogger("Allgemein");
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DVIAufgabe1.LOGGER.setLevel(Level.ALL);
+        Logger.getLogger(DVIAufgabe1.class.getName()).setLevel(Level.ALL);
         
-        DVIAufgabe1.LOGGER.log(Level.INFO, "smf ...");
+        Logger.getLogger(DVIAufgabe1.class.getName()).log(Level.INFO, "smf ...");
         new edu.whs.dvi.ui.ShopMainFrame(new DataAccessObject()).setVisible(true);
-        DVIAufgabe1.LOGGER.log(Level.INFO, "... smf");
+        Logger.getLogger(DVIAufgabe1.class.getName()).log(Level.INFO, "... smf");
     }
 }

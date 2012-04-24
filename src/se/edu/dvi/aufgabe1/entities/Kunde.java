@@ -43,15 +43,6 @@ public class Kunde implements edu.whs.dvi.aufgabe1.entities.Kunde, Serializable{
     public Kunde(long kundennr) {
         this.kundennr = kundennr;
     }
-    
-    public Kunde(long kundennr, String name, String vorname, String strasse, String plz, String wohnort) {
-        this.kundennr = kundennr;
-        this.name = name;
-        this.vorname = vorname;
-        this.strasse = strasse;
-        this.plz = plz;
-        this.wohnort = wohnort;
-    }
 
     public Kunde(String name, String vorname, String strasse, String plz, String wohnort) {
         this.name = name;

@@ -59,7 +59,7 @@ public class Bestellposition implements edu.whs.dvi.aufgabe1.entities.Bestellpos
     
     @Override
     public String toString() {
-        return anzahl + "x " + artikel.getName() + " (" + preis + "cent)";
+        return anzahl + "x " + artikel.getName();
     }
     
 }

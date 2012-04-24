@@ -32,7 +32,7 @@ public class Bestellung implements edu.whs.dvi.aufgabe1.entities.Bestellung, Ser
     private Date bestellDatum;
     @ManyToOne(cascade=CascadeType.PERSIST)
     private Kunde kunde;
-    @OneToMany(targetEntity=Bestellposition.class,mappedBy="bestellung",cascade=CascadeType.ALL)
+    @OneToMany(targetEntity=Bestellposition.class,mappedBy="bestellung",cascade=CascadeType.ALL,orphanRemoval=true)
     Collection<edu.whs.dvi.aufgabe1.entities.Bestellposition> bestellpositionen;
 
     public Bestellung(Date bestellDatum, Kunde kunde, Collection<edu.whs.dvi.aufgabe1.entities.Bestellposition> bestellpositionen) {
